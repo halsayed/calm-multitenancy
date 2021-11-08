@@ -1,0 +1,336 @@
+{
+    "spec": {
+        "access_control_policy_list": [
+            {
+                "acp": {
+                    "name": "nuCalmAcp-8bcc1baf-f8d3-9237-bd88-58c10e38f2e4",
+                    "resources": {
+                        "role_reference": {
+                            "name": "Project Admin",
+                            "uuid": "eef3eba1-77e7-4283-82bc-494bcf407f23",
+                            "kind": "role"
+                        },
+                        "user_group_reference_list": [
+                            {
+                                "name": "CN=P006-admins,OU=P006,OU=TENANTS,DC=ntnx,DC=me",
+                                "kind": "user_group",
+                                "uuid": "00906dc4-85bb-44e3-a44d-85c8669f56a7"
+                            }
+                        ],
+                        "user_reference_list": [],
+                        "filter_list": {
+                            "context_list": [
+                                {
+                                    "scope_filter_expression_list": [
+                                        {
+                                            "operator": "IN",
+                                            "left_hand_side": "PROJECT",
+                                            "right_hand_side": {
+                                                "uuid_list": [
+                                                    "9e632331-3bb6-44db-bcac-37eeaaa706a9"
+                                                ]
+                                            }
+                                        }
+                                    ],
+                                    "entity_filter_expression_list": [
+                                        {
+                                            "operator": "IN",
+                                            "left_hand_side": {
+                                                "entity_type": "ALL"
+                                            },
+                                            "right_hand_side": {
+                                                "collection": "ALL"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "entity_filter_expression_list": [
+                                        {
+                                            "operator": "IN",
+                                            "left_hand_side": {
+                                                "entity_type": "image"
+                                            },
+                                            "right_hand_side": {
+                                                "collection": "ALL"
+                                            }
+                                        },
+                                        {
+                                            "operator": "IN",
+                                            "left_hand_side": {
+                                                "entity_type": "marketplace_item"
+                                            },
+                                            "right_hand_side": {
+                                                "collection": "SELF_OWNED"
+                                            }
+                                        },
+                                        {
+                                            "operator": "IN",
+                                            "right_hand_side": {
+                                                "collection": "ALL"
+                                            },
+                                            "left_hand_side": {
+                                                "entity_type": "directory_service"
+                                            }
+                                        },
+                                        {
+                                            "operator": "IN",
+                                            "right_hand_side": {
+                                                "collection": "ALL"
+                                            },
+                                            "left_hand_side": {
+                                                "entity_type": "role"
+                                            }
+                                        },
+                                        {
+                                            "operator": "IN",
+                                            "right_hand_side": {
+                                                "uuid_list": [
+                                                    "9e632331-3bb6-44db-bcac-37eeaaa706a9"
+                                                ]
+                                            },
+                                            "left_hand_side": {
+                                                "entity_type": "project"
+                                            }
+                                        },
+                                        {
+                                            "operator": "IN",
+                                            "right_hand_side": {
+                                                "collection": "ALL"
+                                            },
+                                            "left_hand_side": {
+                                                "entity_type": "user"
+                                            }
+                                        },
+                                        {
+                                            "operator": "IN",
+                                            "right_hand_side": {
+                                                "collection": "ALL"
+                                            },
+                                            "left_hand_side": {
+                                                "entity_type": "user_group"
+                                            }
+                                        },
+                                        {
+                                            "operator": "IN",
+                                            "left_hand_side": {
+                                                "entity_type": "environment"
+                                            },
+                                            "right_hand_side": {
+                                                "collection": "SELF_OWNED"
+                                            }
+                                        },
+                                        {
+                                            "operator": "IN",
+                                            "right_hand_side": {
+                                                "collection": "ALL"
+                                            },
+                                            "left_hand_side": {
+                                                "entity_type": "app_icon"
+                                            }
+                                        },
+                                        {
+                                            "operator": "IN",
+                                            "right_hand_side": {
+                                                "collection": "ALL"
+                                            },
+                                            "left_hand_side": {
+                                                "entity_type": "category"
+                                            }
+                                        },
+                                        {
+                                            "operator": "IN",
+                                            "left_hand_side": {
+                                                "entity_type": "app_task"
+                                            },
+                                            "right_hand_side": {
+                                                "collection": "SELF_OWNED"
+                                            }
+                                        },
+                                        {
+                                            "operator": "IN",
+                                            "left_hand_side": {
+                                                "entity_type": "app_variable"
+                                            },
+                                            "right_hand_side": {
+                                                "collection": "SELF_OWNED"
+                                            }
+                                        },
+                                        {
+                                            "operator": "IN",
+                                            "right_hand_side": {
+                                                "collection": "ALL"
+                                            },
+                                            "left_hand_side": {
+                                                "entity_type": "identity_provider"
+                                            }
+                                        },
+                                        {
+                                            "operator": "IN",
+                                            "left_hand_side": {
+                                                "entity_type": "vm_recovery_point"
+                                            },
+                                            "right_hand_side": {
+                                                "collection": "ALL"
+                                            }
+                                        },
+                                        {
+                                            "operator": "IN",
+                                            "left_hand_side": {
+                                                "entity_type": "cluster"
+                                            },
+                                            "right_hand_side": {
+                                                "uuid_list": [
+                                                    "0005cfa5-6845-d5f2-3f92-ac1f6b64af76",
+                                                    "0005cfa5-6b3d-97a0-2a27-ac1f6b1894ce"
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "scope_filter_expression_list": [
+                                        {
+                                            "operator": "IN",
+                                            "left_hand_side": "PROJECT",
+                                            "right_hand_side": {
+                                                "uuid_list": [
+                                                    "9e632331-3bb6-44db-bcac-37eeaaa706a9"
+                                                ]
+                                            }
+                                        }
+                                    ],
+                                    "entity_filter_expression_list": [
+                                        {
+                                            "operator": "IN",
+                                            "left_hand_side": {
+                                                "entity_type": "blueprint"
+                                            },
+                                            "right_hand_side": {
+                                                "collection": "ALL"
+                                            }
+                                        },
+                                        {
+                                            "operator": "IN",
+                                            "left_hand_side": {
+                                                "entity_type": "environment"
+                                            },
+                                            "right_hand_side": {
+                                                "collection": "ALL"
+                                            }
+                                        },
+                                        {
+                                            "operator": "IN",
+                                            "left_hand_side": {
+                                                "entity_type": "marketplace_item"
+                                            },
+                                            "right_hand_side": {
+                                                "collection": "ALL"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    "description": "untitledAcp-9950153d-bde8-0c5a-8201-966632448745"
+                },
+                "metadata": {
+                    "kind": "access_control_policy"
+                },
+                "operation": "ADD"
+            }
+        ],
+        "project_detail": {
+            "name": "P005-Tenant A",
+            "resources": {
+                "default_environment_reference": {
+                    "kind": "environment",
+                    "uuid": "c5e6611e-707b-4cfd-a8bd-57b0a0a9ad06"
+                },
+                "external_network_list": [],
+                "account_reference_list": [
+                    {
+                        "kind": "account",
+                        "uuid": "b2a7620a-777f-4266-804b-5def29b53208"
+                    }
+                ],
+                "user_reference_list": [],
+                "default_subnet_reference": {
+                    "kind": "subnet",
+                    "uuid": "af639b0e-e23f-40a3-8b24-02aa751eb307"
+                },
+                "tunnel_reference_list": [],
+                "external_user_group_reference_list": [
+                    {
+                        "name": "CN=P006-admins,OU=P006,OU=TENANTS,DC=ntnx,DC=me",
+                        "kind": "user_group",
+                        "uuid": "00906dc4-85bb-44e3-a44d-85c8669f56a7"
+                    }
+                ],
+                "subnet_reference_list": [
+                    {
+                        "kind": "subnet",
+                        "name": "public",
+                        "uuid": "af639b0e-e23f-40a3-8b24-02aa751eb307"
+                    },
+                    {
+                        "kind": "subnet",
+                        "name": "public",
+                        "uuid": "aa3dddab-7693-427e-aa3a-34f9a8002642"
+                    }
+                ],
+                "environment_reference_list": [
+                    {
+                        "kind": "environment",
+                        "uuid": "c5e6611e-707b-4cfd-a8bd-57b0a0a9ad06"
+                    }
+                ]
+            },
+            "description": "Project for tenant: Tenant A, using code: P005"
+        },
+        "user_list": [],
+        "user_group_list": [
+            {
+                "metadata": {
+                    "kind": "user_group",
+                    "uuid": "00906dc4-85bb-44e3-a44d-85c8669f56a7"
+                },
+                "user_group": {
+                    "resources": {
+                        "directory_service_user_group": {
+                            "distinguished_name": "CN=P006-admins,OU=P006,OU=TENANTS,DC=ntnx,DC=me"
+                        }
+                    }
+                },
+                "operation": "ADD"
+            }
+        ]
+    },
+    "api_version": "3.1",
+    "metadata": {
+        "project_reference": {
+            "kind": "project",
+            "name": "P005-Tenant A",
+            "uuid": "9e632331-3bb6-44db-bcac-37eeaaa706a9"
+        },
+        "categories_mapping": {
+            "PROJECTS": [
+                "P005"
+            ]
+        },
+        "creation_time": "2021-11-01T09:31:54Z",
+        "spec_version": 4,
+        "kind": "project",
+        "last_update_time": "2021-11-01T11:47:41Z",
+        "uuid": "9e632331-3bb6-44db-bcac-37eeaaa706a9",
+        "categories": {
+            "PROJECTS": "P005"
+        },
+        "owner_reference": {
+            "kind": "user",
+            "name": "admin",
+            "uuid": "00000000-0000-0000-0000-000000000000"
+        }
+    }
+}

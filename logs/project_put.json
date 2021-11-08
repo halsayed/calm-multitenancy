@@ -1,0 +1,522 @@
+{
+  "spec": {
+    "access_control_policy_list": [
+      {
+        "acp": {
+          "name": "nuCalmAcp-dce12dec-a833-585a-4bab-e9cd47d86ba9",
+          "resources": {
+            "role_reference": {
+              "name": "Project Admin",
+              "uuid": "4f6eada3-10fd-4770-b8df-a3305117ce28",
+              "kind": "role"
+            },
+            "user_group_reference_list": [
+              {
+                "name": "CN=P002-admins,OU=P002,OU=Tenants,DC=ntnx,DC=me",
+                "kind": "user_group",
+                "uuid": "62766514-d943-4393-b760-7a00cb88a86e"
+              }
+            ],
+            "user_reference_list": [],
+            "filter_list": {
+              "context_list": [
+                {
+                  "scope_filter_expression_list": [
+                    {
+                      "operator": "IN",
+                      "left_hand_side": "PROJECT",
+                      "right_hand_side": {
+                        "uuid_list": [
+                          "51681e5e-8ce5-4593-8925-6c880e86154b"
+                        ]
+                      }
+                    }
+                  ],
+                  "entity_filter_expression_list": [
+                    {
+                      "operator": "IN",
+                      "left_hand_side": {
+                        "entity_type": "ALL"
+                      },
+                      "right_hand_side": {
+                        "collection": "ALL"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "entity_filter_expression_list": [
+                    {
+                      "operator": "IN",
+                      "left_hand_side": {
+                        "entity_type": "image"
+                      },
+                      "right_hand_side": {
+                        "collection": "ALL"
+                      }
+                    },
+                    {
+                      "operator": "IN",
+                      "left_hand_side": {
+                        "entity_type": "marketplace_item"
+                      },
+                      "right_hand_side": {
+                        "collection": "SELF_OWNED"
+                      }
+                    },
+                    {
+                      "operator": "IN",
+                      "right_hand_side": {
+                        "collection": "ALL"
+                      },
+                      "left_hand_side": {
+                        "entity_type": "directory_service"
+                      }
+                    },
+                    {
+                      "operator": "IN",
+                      "right_hand_side": {
+                        "collection": "ALL"
+                      },
+                      "left_hand_side": {
+                        "entity_type": "role"
+                      }
+                    },
+                    {
+                      "operator": "IN",
+                      "right_hand_side": {
+                        "uuid_list": [
+                          "51681e5e-8ce5-4593-8925-6c880e86154b"
+                        ]
+                      },
+                      "left_hand_side": {
+                        "entity_type": "project"
+                      }
+                    },
+                    {
+                      "operator": "IN",
+                      "right_hand_side": {
+                        "collection": "ALL"
+                      },
+                      "left_hand_side": {
+                        "entity_type": "user"
+                      }
+                    },
+                    {
+                      "operator": "IN",
+                      "right_hand_side": {
+                        "collection": "ALL"
+                      },
+                      "left_hand_side": {
+                        "entity_type": "user_group"
+                      }
+                    },
+                    {
+                      "operator": "IN",
+                      "left_hand_side": {
+                        "entity_type": "environment"
+                      },
+                      "right_hand_side": {
+                        "collection": "SELF_OWNED"
+                      }
+                    },
+                    {
+                      "operator": "IN",
+                      "right_hand_side": {
+                        "collection": "ALL"
+                      },
+                      "left_hand_side": {
+                        "entity_type": "app_icon"
+                      }
+                    },
+                    {
+                      "operator": "IN",
+                      "right_hand_side": {
+                        "collection": "ALL"
+                      },
+                      "left_hand_side": {
+                        "entity_type": "category"
+                      }
+                    },
+                    {
+                      "operator": "IN",
+                      "left_hand_side": {
+                        "entity_type": "app_task"
+                      },
+                      "right_hand_side": {
+                        "collection": "SELF_OWNED"
+                      }
+                    },
+                    {
+                      "operator": "IN",
+                      "left_hand_side": {
+                        "entity_type": "app_variable"
+                      },
+                      "right_hand_side": {
+                        "collection": "SELF_OWNED"
+                      }
+                    },
+                    {
+                      "operator": "IN",
+                      "right_hand_side": {
+                        "collection": "ALL"
+                      },
+                      "left_hand_side": {
+                        "entity_type": "identity_provider"
+                      }
+                    },
+                    {
+                      "operator": "IN",
+                      "left_hand_side": {
+                        "entity_type": "vm_recovery_point"
+                      },
+                      "right_hand_side": {
+                        "collection": "ALL"
+                      }
+                    },
+                    {
+                      "operator": "IN",
+                      "left_hand_side": {
+                        "entity_type": "cluster"
+                      },
+                      "right_hand_side": {
+                        "uuid_list": [
+                          "0005cf17-761c-be8c-0d9f-ac1f6b6913a7"
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "scope_filter_expression_list": [
+                    {
+                      "operator": "IN",
+                      "left_hand_side": "PROJECT",
+                      "right_hand_side": {
+                        "uuid_list": [
+                          "51681e5e-8ce5-4593-8925-6c880e86154b"
+                        ]
+                      }
+                    }
+                  ],
+                  "entity_filter_expression_list": [
+                    {
+                      "operator": "IN",
+                      "left_hand_side": {
+                        "entity_type": "blueprint"
+                      },
+                      "right_hand_side": {
+                        "collection": "ALL"
+                      }
+                    },
+                    {
+                      "operator": "IN",
+                      "left_hand_side": {
+                        "entity_type": "environment"
+                      },
+                      "right_hand_side": {
+                        "collection": "ALL"
+                      }
+                    },
+                    {
+                      "operator": "IN",
+                      "left_hand_side": {
+                        "entity_type": "marketplace_item"
+                      },
+                      "right_hand_side": {
+                        "collection": "ALL"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "description": "untitledAcp-ff642abd-cf61-08fa-747e-c842d8c02a3b"
+        },
+        "metadata": {
+          "kind": "access_control_policy"
+        },
+        "operation": "ADD"
+      },
+      {
+        "acp": {
+          "name": "nuCalmAcp-679ce98e-799c-a5db-6852-48dae1410bb8",
+          "resources": {
+            "role_reference": {
+              "name": "Consumer",
+              "uuid": "8cbb3728-cf30-4ded-9d5b-486555d74dcd",
+              "kind": "role"
+            },
+            "user_group_reference_list": [
+              {
+                "name": "CN=P002-consumers,OU=P002,OU=Tenants,DC=ntnx,DC=me",
+                "kind": "user_group",
+                "uuid": "4d46139a-2172-4c7d-b9b2-9975c3ed0228"
+              }
+            ],
+            "user_reference_list": [],
+            "filter_list": {
+              "context_list": [
+                {
+                  "scope_filter_expression_list": [
+                    {
+                      "operator": "IN",
+                      "left_hand_side": "PROJECT",
+                      "right_hand_side": {
+                        "uuid_list": [
+                          "51681e5e-8ce5-4593-8925-6c880e86154b"
+                        ]
+                      }
+                    }
+                  ],
+                  "entity_filter_expression_list": [
+                    {
+                      "operator": "IN",
+                      "left_hand_side": {
+                        "entity_type": "ALL"
+                      },
+                      "right_hand_side": {
+                        "collection": "ALL"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "entity_filter_expression_list": [
+                    {
+                      "operator": "IN",
+                      "left_hand_side": {
+                        "entity_type": "image"
+                      },
+                      "right_hand_side": {
+                        "collection": "ALL"
+                      }
+                    },
+                    {
+                      "operator": "IN",
+                      "left_hand_side": {
+                        "entity_type": "marketplace_item"
+                      },
+                      "right_hand_side": {
+                        "collection": "SELF_OWNED"
+                      }
+                    },
+                    {
+                      "operator": "IN",
+                      "right_hand_side": {
+                        "collection": "ALL"
+                      },
+                      "left_hand_side": {
+                        "entity_type": "app_icon"
+                      }
+                    },
+                    {
+                      "operator": "IN",
+                      "right_hand_side": {
+                        "collection": "ALL"
+                      },
+                      "left_hand_side": {
+                        "entity_type": "category"
+                      }
+                    },
+                    {
+                      "operator": "IN",
+                      "left_hand_side": {
+                        "entity_type": "app_task"
+                      },
+                      "right_hand_side": {
+                        "collection": "SELF_OWNED"
+                      }
+                    },
+                    {
+                      "operator": "IN",
+                      "left_hand_side": {
+                        "entity_type": "app_variable"
+                      },
+                      "right_hand_side": {
+                        "collection": "SELF_OWNED"
+                      }
+                    },
+                    {
+                      "operator": "IN",
+                      "left_hand_side": {
+                        "entity_type": "vm_recovery_point"
+                      },
+                      "right_hand_side": {
+                        "collection": "ALL"
+                      }
+                    },
+                    {
+                      "operator": "IN",
+                      "left_hand_side": {
+                        "entity_type": "cluster"
+                      },
+                      "right_hand_side": {
+                        "uuid_list": [
+                          "0005cf17-761c-be8c-0d9f-ac1f6b6913a7"
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "scope_filter_expression_list": [
+                    {
+                      "operator": "IN",
+                      "left_hand_side": "PROJECT",
+                      "right_hand_side": {
+                        "uuid_list": [
+                          "51681e5e-8ce5-4593-8925-6c880e86154b"
+                        ]
+                      }
+                    }
+                  ],
+                  "entity_filter_expression_list": [
+                    {
+                      "operator": "IN",
+                      "left_hand_side": {
+                        "entity_type": "blueprint"
+                      },
+                      "right_hand_side": {
+                        "collection": "ALL"
+                      }
+                    },
+                    {
+                      "operator": "IN",
+                      "left_hand_side": {
+                        "entity_type": "environment"
+                      },
+                      "right_hand_side": {
+                        "collection": "ALL"
+                      }
+                    },
+                    {
+                      "operator": "IN",
+                      "left_hand_side": {
+                        "entity_type": "marketplace_item"
+                      },
+                      "right_hand_side": {
+                        "collection": "ALL"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "description": "untitledAcp-97c19c2c-43e9-59b6-f698-5d6a4a8cdb0c"
+        },
+        "metadata": {
+          "kind": "access_control_policy"
+        },
+        "operation": "ADD"
+      }
+    ],
+    "project_detail": {
+      "name": "P002-MoE Project",
+      "resources": {
+        "default_environment_reference": {
+          "kind": "environment",
+          "uuid": "7d9b1b53-05bc-4751-8632-6d1dd21c2510"
+        },
+        "external_network_list": [],
+        "account_reference_list": [
+          {
+            "kind": "account",
+            "uuid": "901f9a36-4b85-4e26-a7e2-710fd99eb7fe"
+          }
+        ],
+        "user_reference_list": [],
+        "default_subnet_reference": {
+          "kind": "subnet",
+          "uuid": "17ed42c6-b3fd-4862-8cf5-b908fe2ccfae"
+        },
+        "tunnel_reference_list": [],
+        "external_user_group_reference_list": [
+          {
+            "name": "CN=P002-admins,OU=P002,OU=Tenants,DC=ntnx,DC=me",
+            "kind": "user_group",
+            "uuid": "62766514-d943-4393-b760-7a00cb88a86e"
+          },
+          {
+            "name": "CN=P002-consumers,OU=P002,OU=Tenants,DC=ntnx,DC=me",
+            "kind": "user_group",
+            "uuid": "4d46139a-2172-4c7d-b9b2-9975c3ed0228"
+          }
+        ],
+        "subnet_reference_list": [
+          {
+            "kind": "subnet",
+            "name": "PUBLIC",
+            "uuid": "17ed42c6-b3fd-4862-8cf5-b908fe2ccfae"
+          }
+        ],
+        "environment_reference_list": [
+          {
+            "kind": "environment",
+            "uuid": "7d9b1b53-05bc-4751-8632-6d1dd21c2510"
+          }
+        ]
+      },
+      "description": "Project for tenant: MoE Project, using code: P002"
+    },
+    "user_list": [],
+    "user_group_list": [
+      {
+        "metadata": {
+          "kind": "user_group",
+          "uuid": "62766514-d943-4393-b760-7a00cb88a86e"
+        },
+        "user_group": {
+          "resources": {
+            "directory_service_user_group": {
+              "distinguished_name": "CN=P002-admins,OU=P002,OU=Tenants,DC=ntnx,DC=me"
+            }
+          }
+        },
+        "operation": "ADD"
+      },
+      {
+        "metadata": {
+          "kind": "user_group",
+          "uuid": "4d46139a-2172-4c7d-b9b2-9975c3ed0228"
+        },
+        "user_group": {
+          "resources": {
+            "directory_service_user_group": {
+              "distinguished_name": "CN=P002-consumers,OU=P002,OU=Tenants,DC=ntnx,DC=me"
+            }
+          }
+        },
+        "operation": "ADD"
+      }
+    ]
+  },
+  "api_version": "3.1",
+  "metadata": {
+    "project_reference": {
+      "kind": "project",
+      "name": "P002-MoE Project",
+      "uuid": "51681e5e-8ce5-4593-8925-6c880e86154b"
+    },
+    "categories_mapping": {
+      "PROJECTS": [
+        "P002"
+      ]
+    },
+    "creation_time": "2021-10-25T12:27:34Z",
+    "spec_version": 2,
+    "kind": "project",
+    "last_update_time": "2021-10-25T12:27:40Z",
+    "uuid": "51681e5e-8ce5-4593-8925-6c880e86154b",
+    "categories": {
+      "PROJECTS": "P002"
+    },
+    "owner_reference": {
+      "kind": "user",
+      "name": "admin",
+      "uuid": "00000000-0000-0000-0000-000000000000"
+    }
+  }
+}

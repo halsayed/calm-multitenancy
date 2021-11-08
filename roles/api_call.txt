@@ -1,0 +1,5 @@
+put for role update:
+https://10.38.7.9:9440/api/nutanix/v3/calm_projects/9e632331-3bb6-44db-bcac-37eeaaa706a9
+
+get project details:
+https://{{PC}}:9440/api/nutanix/v3/projects_internal/9e632331-3bb6-44db-bcac-37eeaaa706a9
