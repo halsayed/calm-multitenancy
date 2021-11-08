@@ -1,5 +1,5 @@
 $code = "@@{PROJECT_CODE}@@"
-$groups = '@@{GROUPS}@@' | ConvertFrom-Json
+$groups = '@@{USER_GROUPS}@@' | ConvertFrom-Json
 $path = $groups[0] -replace '^.*?,(..=.*)$', '$1' -replace '^.*?,(..=.*)$', '$1'
 $ou_path = $groups[0] -replace '^.*?,(..=.*)$', '$1'
 # $domain = ($path -split '(?<![\\]),' | Where-Object { $_ -match '^DC=' }) -replace '^DC=', '' -join '.' 
