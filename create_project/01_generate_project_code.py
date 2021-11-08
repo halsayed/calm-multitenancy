@@ -42,11 +42,12 @@ if r .status_code == 200:
         used_codes.append(int(code['value'][1:]))
     
     used_codes.sort()
-    next_count = used_codes[-1] + 1
-    digit_format = '{'+'0:0={}d'.format(COUNT_DIGITS)+'}'
-    next_count_txt = digit_format.format(next_count)
-    project_code = '{}{}'.format(CODE_PREFIX, next_count_txt)
-    print('INFO - adding {} to category'.format(project_code))
+    if current_count:
+        next_count = used_codes[-1] + 1
+        digit_format = '{'+'0:0={}d'.format(COUNT_DIGITS)+'}'
+        next_count_txt = digit_format.format(next_count)
+        project_code = '{}{}'.format(CODE_PREFIX, next_count_txt)
+        print('INFO - adding {} to category'.format(project_code))
 
 # if the category key doesn't exist then create it
 if current_count == 0:
