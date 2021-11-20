@@ -1,8 +1,8 @@
-# Name: Get external groups from template project to recreate on cloned
-# Task Type: set variable
+# Name: Get project roles
+# Task Type: Set-Variable
 # Script Type: EScript
 # Author: Husain Ebrahim <husain.ebrahim@nutanix.com>
-# Date: 03-11-2021
+# Date: 09-11-2021
 # Description:
 
 import requests
@@ -12,8 +12,6 @@ import requests
 
 
 # -------------- Test Environment ------------------
-from time import sleep
-import uuid
 import urllib3
 import re
 from base64 import b64encode
@@ -26,45 +24,43 @@ PRISM_USER = config('PRISM_USER')
 PRISM_PASS = config('PRISM_PASS')
 authorization = 'Basic {}'.format(b64encode(f'{PRISM_USER}:{PRISM_PASS}'.encode()).decode())
 url = f'https://{PRISM_HOST}:{PRISM_PORT}/api/nutanix/v3/'+'{}'
-
-project_template = 'TEMPLATE'
-project_code = 'P006'
+project_name = 'TEMPLATE'
 
 # -------------- Calm Environment ------------------
 # authorization = 'Bearer @@{calm_jwt}@@'
 # url = 'https://127.0.0.1:9440/api/nutanix/v3/{}'
-# project_template = '@@{PROJECT_TEMPLATE}@@'
-# project_code = '@@{PROJECT_CODE}@@'
+# project_name = '@@{calm_project_name}@@'
 
 kwargs = {
     'verify': False,
     'headers': {'Authorization': authorization}
 }
 
+
 # find the template project to clone the specs
 # ----------------------------------------------
 payload = {
     'kind': 'project',
-    'filter': 'name=={}'.format(project_template)
+    'filter': 'name=={}'.format(project_name)
 }
 
 r = requests.post(url.format('projects/list'), json=payload, **kwargs)
 if r.status_code == 200 and int(r.json()['metadata']['total_matches']):
-    print('INFO - Template project found')
-    template = r.json()['entities'][0]
-    template_uuid = template['metadata']['uuid']
-    print('INFO - Template project uuid: {}'.format(template_uuid))
+    print('INFO - project found')
+    project_uuid = r.json()['entities'][0].get('metadata').get('uuid')
+    print('INFO - project uuid: {}'.format(project_uuid))
 else:
-    print('ERROR - No template project found, stopping, status code: {}, msg: {}'.format(r.status_code, r.content))
+    print('ERROR - No project found, stopping, status code: {}, msg: {}'.format(r.status_code, r.content))
     exit(1)
 
-# get the template project details
-r = requests.get(url.format('projects_internal/'+template_uuid), **kwargs)
-user_groups = []
+r = requests.get(url.format('projects_internal/'+project_uuid), **kwargs)
 if r.status_code == 200:
-    spec = r.json()['spec']
-    for group in spec['project_detail']['resources']['external_user_group_reference_list']:
-        name = group.get('name').replace(project_template.lower(), project_code)
-        user_groups.append(name)
+    groups = r.json()['spec']['project_detail']['resources']['external_user_group_reference_list']
 
-print('USER_GROUPS={}'.format(json.dumps(user_groups)))
+roles_list = {}
+for group in groups:
+    cn_name = re.search('cn=(.+?),', group['name'].lower()).group(1)
+    role_name = cn_name[cn_name.find('-')+1:]
+    roles_list[role_name] = cn_name
+
+print(roles_list)

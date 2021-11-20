@@ -16,10 +16,12 @@ from time import sleep
 import uuid
 import urllib3
 urllib3.disable_warnings()
-authorization = 'Basic YWRtaW46bngyVGVjaDkxMSE='
-url = 'https://10.38.7.9:9440/api/{}'
-project_template = 'P005-Tenant A'
-project_uuid = '36f8d2e6-ebcd-4335-8785-d7e8fc1943d3'
+authorization = 'Basic YWRtaW46bngyVGVjaDUzNSE='
+# authorization = 'Basic YWRtaW46bngyVGVjaDkxMSE='
+# url = 'https://10.38.7.9:9440/api/{}'
+url = 'https://10.42.53.39:9440/api/{}'
+project_template = 'TEMPLATE'
+project_uuid = 'd6af01c2-9a6f-4619-b377-8b5b3424add8'
 
 # -------------- Calm Environment ------------------
 # authorization = 'Bearer @@{calm_jwt}@@'
@@ -58,7 +60,7 @@ payload = {
 }
 
 r = requests.post(url.format('calm/v3.0/quotas/list'), json=payload, **kwargs)
-if r.status_code == 200 and not int(r.json()['metadata']['total']):
+if r.status_code == 200 and len(r.json()['entities']) == 0:
     print('INFO - template project has no quotas, stopping')
     exit(0)
 elif r.status_code != 200:

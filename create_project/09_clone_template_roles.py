@@ -15,10 +15,18 @@ import requests
 from time import sleep
 import uuid
 import urllib3
-import json
+import re
+from base64 import b64encode
+from decouple import config
 urllib3.disable_warnings()
-authorization = 'Basic YWRtaW46bngyVGVjaDkxMSE='
-url = 'https://10.38.7.9:9440/api/nutanix/v3/{}'
+
+PRISM_HOST = config('PRISM_HOST')
+PRISM_PORT = config('PRISM_PORT')
+PRISM_USER = config('PRISM_USER')
+PRISM_PASS = config('PRISM_PASS')
+authorization = 'Basic {}'.format(b64encode(f'{PRISM_USER}:{PRISM_PASS}'.encode()).decode())
+url = f'https://{PRISM_HOST}:{PRISM_PORT}/api/nutanix/v3/'+'{}'
+
 project_template = 'TEMPLATE'
 project_code = 'P015'
 user_groups='["cn=P015-operators,ou=P015,ou=tenants,dc=ntnx,dc=me", "cn=P015-consumers,ou=P015,ou=tenants,dc=ntnx,dc=me", "cn=P015-admins,ou=P015,ou=tenants,dc=ntnx,dc=me"]'
